@@ -3,30 +3,34 @@ import json
 import os
 from dotenv import load_dotenv
 
-load_dotenv()
-aws_access_key = os.getenv("AWS_ACCESS_KEY")
-aws_secret_key = os.getenv("AWS_SECRET_KEY")
+# load_dotenv()
+# aws_access_key = os.getenv("AWS_ACCESS_KEY")
+# aws_secret_key = os.getenv("AWS_SECRET_KEY")
 
-iam = boto3.client(
-    'iam',
-    aws_access_key_id=aws_access_key,
-    aws_secret_access_key=aws_secret_key,
-    region_name='us-east-1'
-)
+# iam = boto3.client(
+#     'iam',
+#     aws_access_key_id=aws_access_key,
+#     aws_secret_access_key=aws_secret_key,
+#     region_name='us-east-1'
+# )
+#
+# sts = boto3.client(
+#     'sts',
+#     aws_access_key_id=aws_access_key,
+#     aws_secret_access_key=aws_secret_key,
+#     region_name='us-east-1'
+# )
+#
+# s3_resource = boto3.resource(
+#     's3',
+#     aws_access_key_id=aws_access_key,
+#     aws_secret_access_key=aws_secret_key,
+#     region_name='us-east-1'
+# )
 
-sts = boto3.client(
-    'sts',
-    aws_access_key_id=aws_access_key,
-    aws_secret_access_key=aws_secret_key,
-    region_name='us-east-1'
-)
-
-s3_resource = boto3.resource(
-    's3',
-    aws_access_key_id=aws_access_key,
-    aws_secret_access_key=aws_secret_key,
-    region_name='us-east-1'
-)
+iam = boto3.client('iam')
+sts = boto3.client('sts')
+s3_resource = boto3.resource('s3')
 
 
 # Define role names
